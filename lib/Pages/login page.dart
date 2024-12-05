@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp/Pages/HomePage.dart';
 import 'package:foodapp/components/TextFields.dart';
 import 'package:foodapp/components/buttons.dart';
 
@@ -15,7 +16,15 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
 
   final TextEditingController passwordController = TextEditingController();
-
+  //login
+  void login(){
+    /*
+    auth logic
+     */
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> const HomePage(),
+    ),
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,12 +58,12 @@ class _LoginPageState extends State<LoginPage> {
           MyTextField(
               controller: passwordController,
               hintText: 'Password',
-              obsecureText: false),
+              obsecureText: true),
 
           //signin button
           MyButton(
             text: "Sign In",
-            onTap: (){},
+            onTap: login,
           ),
           const SizedBox(height: 25),
 
